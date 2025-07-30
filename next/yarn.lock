@@ -2561,23 +2561,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next.js@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "next.js@workspace:."
-  dependencies:
-    "@eslint/eslintrc": "npm:^3"
-    "@types/node": "npm:^20"
-    "@types/react": "npm:^19"
-    "@types/react-dom": "npm:^19"
-    eslint: "npm:^9"
-    eslint-config-next: "npm:15.4.5"
-    next: "npm:15.4.5"
-    react: "npm:19.1.0"
-    react-dom: "npm:19.1.0"
-    typescript: "npm:^5"
-  languageName: unknown
-  linkType: soft
-
 "next@npm:15.4.5":
   version: 15.4.5
   resolution: "next@npm:15.4.5"
@@ -2636,6 +2619,23 @@ __metadata:
   checksum: 10c0/b9b4d3ca18c2e00b309f66c50eae2832279722c844f0cc2fa4de930bd7f4984540ea6b70992272da662a2fb3830048f6d7e2aa80c60dd883382770f32b6f425b
   languageName: node
   linkType: hard
+
+"next@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "next@workspace:."
+  dependencies:
+    "@eslint/eslintrc": "npm:^3"
+    "@types/node": "npm:^20"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9"
+    eslint-config-next: "npm:15.4.5"
+    next: "npm:15.4.5"
+    react: "npm:19.1.0"
+    react-dom: "npm:19.1.0"
+    typescript: "npm:^5"
+  languageName: unknown
+  linkType: soft
 
 "object-assign@npm:^4.1.1":
   version: 4.1.1
