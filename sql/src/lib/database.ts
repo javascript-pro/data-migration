@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import Database from 'better-sqlite3';
-import { initDB } from './sql/initDB';
+import { initDB } from './initDB';
 
 const dbDir = path.resolve(process.cwd(), '..');
 if (!fs.existsSync(dbDir)) {
