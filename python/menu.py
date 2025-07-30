@@ -20,8 +20,8 @@ def main():
     questions = [
         inquirer.List(
             "choice",
-            message="Select script to run",
-            choices=["Populate DB", "Other script", "Exit"],
+            message="PYTHON > Select script",
+            choices=["Populate DB", "Other", "Exit"],
         )
     ]
     while True:
@@ -31,7 +31,7 @@ def main():
         choice = answer["choice"]
         if choice == "Populate DB":
             run_populate()
-        elif choice == "Other script":
+        elif choice == "Other":
             run_other()
         else:
             print("Exiting.")
