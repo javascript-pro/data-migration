@@ -10,3 +10,10 @@
 
 I staged raw data, applied deterministic cleanup logic with SQL (using ROW_NUMBER(), CASE, TRY_CAST, and window functions), and created a cleaned model with metadata columns for audit. I validated transformations with checksum diffs and row counts. This allowed us to make the data usable for reporting and downstream ML.
 
+___ 
+
+## [SQL in Data Migration](./sql)
+
+SQL is the core tool for profiling, cleaning, transforming, and loading data during migration. It allows direct manipulation of source and target schemas, detection of data quality issues, and implementation of business rules at scale. Using SQL ensures transformations are transparent, testable, and performant within the database engine itself.
+
+
