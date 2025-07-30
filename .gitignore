@@ -1,3 +1,14 @@
+# data-migration/.gitignore
+
+.yarn
+
+# SQL Backend
+data-migration.db
+/sql/.yarn
+
+.editorconfig
+.gitattributes
+
 # Logs
 logs
 *.log
