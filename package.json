@@ -1,0 +1,10 @@
+{
+  "version": "1.0.1",
+  "name": "data-migration",
+  "description": "Data Migration with Next, Python & SQL",
+  "packageManager": "yarn@4.3.1",
+  "scripts": {
+    "next": "cd next.js && next dev",
+    "test": "echo no tests yet"
+  }
+}
