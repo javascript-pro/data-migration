@@ -6,6 +6,8 @@ authors = ["Goldlabel Apps <goldlabel.apps@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+faker = "^37.5.3"
+inquirer = "^3.4.0"
 
 [build-system]
 requires = ["poetry-core"]
