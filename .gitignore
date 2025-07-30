@@ -1,6 +1,7 @@
 # data-migration/.gitignore
 
 # SQL Backend
+data-migration.db
 /sql/.yarn
 
 # Logs

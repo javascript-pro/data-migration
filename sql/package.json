@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "sql",
-  "description": "Data Migration SQL Service",
+  "description": "Data Migration SQL REST API",
   "scripts": {
     "test": "echo no tests",
     "dev": "nodemon",
