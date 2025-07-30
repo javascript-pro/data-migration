@@ -22,6 +22,9 @@ If all goes well, the Next.js frontend will be avilable on http://localhost:3000
 
 __Note__: Node will create `data-migration/data-migration.db` on first run
 
+
+
+
 #### SQL in Data Migration
 
 SQL is the core tool for profiling, cleaning, transforming, and loading data during migration. It allows direct manipulation of source and target schemas, detection of data quality issues, and implementation of business rules at scale. Using SQL ensures transformations are transparent, testable, and performant within the database engine itself.
