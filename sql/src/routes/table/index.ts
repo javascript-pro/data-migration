@@ -1,45 +1,62 @@
-// data-migration/sql/src/routes/applications/index.ts
-
 import { Router, Request, Response } from 'express';
 import { header } from '../../lib/header';
 import { db } from '../../lib/database';
-// import readRouter from './read';
 
 const router = Router();
 
 /**
- * GET /applications
- * Returns all rows from the applications table.
+ * GET /table/:table_name
+ * Returns schema, row count, and rows from the specified table.
  */
-router.get('/', (_req: Request, res: Response) => {
+router.get('/:table_name', (req: Request, res: Response) => {
+  const tableName = req.params.table_name;
+
   try {
-    const tableName = 'applications';
-    const sql = `SELECT * FROM ${tableName} ORDER BY id DESC`;
-    const rows = db.prepare(sql).all();
+    // Check if table exists
+    const tableExists = db.prepare(`
+      SELECT name FROM sqlite_master WHERE type='table' AND name = ?
+    `).get(tableName);
+
+    if (!tableExists) {
+      return res.status(404).json({
+        ...header,
+        severity: 'warning',
+        title: `Table "${tableName}" not found`,
+        data: {
+          error: `No table named "${tableName}"`,
+        }
+      });
+    }
+
+    // Get schema
+    const schema = db.prepare(`PRAGMA table_info(${tableName})`).all();
+
+    // Get rows
+    const rows = db.prepare(`SELECT * FROM ${tableName} ORDER BY id DESC`).all();
 
     res.json({
       ...header,
       severity: 'success',
-      title: `* SELECTED FROM from ${tableName}`,
-      description: `Applications ${rows.length}`,
+      title: `* SELECT FROM ${tableName}`,
+      description: `${tableName} table info`,
       data: {
+        table: tableName,
+        schema,
         count: rows.length,
         rows,
       }
     });
   } catch (err: any) {
-    console.error(`[applications/index] Error:`, err);
+    console.error(`[table/${tableName}] Error:`, err);
     res.status(500).json({
       ...header,
       severity: 'error',
-      title: 'Error reading applications',
+      title: 'Error accessing table',
       data: {
         error: err.message || 'Internal server error',
       }
     });
   }
 });
-
-// router.use('/read', readRouter );
 
 export default router;
