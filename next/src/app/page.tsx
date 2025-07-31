@@ -31,7 +31,7 @@ export default function Home() {
         }
       })
       .catch((err) => {
-        setError(`Failed to load applications: ${err.message}`);
+        setError(`${err.message}. Is the API running?`);
       })
       .finally(() => setLoading(false));
   }, []);
