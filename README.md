@@ -1,14 +1,11 @@
-## Data Migration with Next, Python & SQL
+## Data Migration with Next.js, Python & SQL
+Technical interview project demonstrating a full-stack data migration pipeline using SQL, Python, and a Next.js interface.
 
-> Technical interview: Using Next.js, Python and SQL.  with the use of an online coding interview tool, coding exerciseswill be presented and discussed.
+Agile Story
+"Inherited a legacy SQL Server database with undocumented schema, profiled inconsistencies including nulls, duplicates, and format drift across related tables."
 
-#### Agile Story
-
-"In a project where we inherit a legacy SQL Server database, the data is inconsistent and undocumented. Profiled nulls, duplicates, and inconsistent formats across tables."
-
-#### Solution
-
-Staged raw data, applied deterministic cleanup logic with SQL (using ROW_NUMBER(), CASE, TRY_CAST, and window functions), and created a cleaned model with metadata columns for audit. Validated transformations with checksum diffs and row counts. This allowed us to make the data usable for reporting and downstream ML.
+Solution
+Staged raw data and applied deterministic SQL transformations using ROW_NUMBER(), CASE, TRY_CAST, and window functions. Built cleaned tables with audit metadata. Python was used for orchestration and test validation. Exposed RESTful endpoints via a Node-based SQL API, with a Next.js frontend for triggering workflows and inspecting results. Validated output via checksums and row counts, preparing the data for analytics and ML.
 
 ## Install & Use
 
