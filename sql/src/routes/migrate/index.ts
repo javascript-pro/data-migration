@@ -3,8 +3,7 @@
 import { Router, Request, Response } from 'express';
 import { header } from '../../lib/header';
 import { db } from '../../lib/database';
-import createRouter from './create';
-import updateRouter from './update';
+import cleanRouter from './clean';
 
 const router = Router();
 
@@ -14,18 +13,14 @@ const router = Router();
  */
 router.get('/', (_req: Request, res: Response) => {
   try {
-    const tableName = 'log';
-    const sql = `SELECT * FROM ${tableName} ORDER BY updated DESC`;
-    const rows = db.prepare(sql).all();
 
     res.json({
       ...header,
       severity: 'success',
-      title: `All records in ${tableName}`,
-      description: `Total ${rows.length}`,
+      title: `All records in`,
+      description: `Total`,
       data: {
-        count: rows.length,
-        rows,
+        foo: "bar"
       }
     });
   } catch (err: any) {
@@ -41,7 +36,6 @@ router.get('/', (_req: Request, res: Response) => {
   }
 });
 
-router.use('/create', createRouter);
-router.use('/update', updateRouter);
+router.use('/clean', cleanRouter);
 
 export default router;
