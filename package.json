@@ -1,16 +1,20 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "data-migration",
   "description": "Data Migration with Next, Python & SQL",
+  "scripts": {
+    "dev": "node dev.mjs",
+    "next": "cd next && yarn dev",
+    "sql": "cd sql && yarn dev",
+    "python": "cd ./python && clear && poetry run python menu.py"
+  },
+  "dependencies": {
+    "open": "^10.2.0"
+  },
   "packageManager": "yarn@4.3.1",
   "workspaces": [
     "next",
     "sql",
     "python"
-  ],
-  "scripts": {
-    "next": "cd next && yarn dev",
-    "sql": "cd sql && yarn dev",
-    "python": "cd ./python && clear && poetry run python menu.py"
-  }
+  ]
 }
