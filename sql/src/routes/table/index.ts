@@ -18,7 +18,7 @@ router.get('/:table_name', (req: Request, res: Response) => {
     `).get(tableName);
 
     if (!tableExists) {
-      return res.status(404).json({
+      return res.status(200).json({
         ...header,
         severity: 'warning',
         title: `Table "${tableName}" not found`,
@@ -41,7 +41,7 @@ router.get('/:table_name', (req: Request, res: Response) => {
       description: `${tableName} table info`,
       data: {
         table: tableName,
-        schema,
+        // schema,
         count: rows.length,
         rows,
       }

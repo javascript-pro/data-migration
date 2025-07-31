@@ -25,8 +25,8 @@ export default function Home() {
 
   React.useEffect(() => {
     Promise.all([
-      fetch('http://localhost:4000/applications'),
-      fetch('http://localhost:4000/applications/cleaned'),
+      fetch('http://localhost:4000/table/applications'),
+      fetch('http://localhost:4000/table/applications/cleaned'),
     ])
       .then(async ([messyRes, cleanRes]) => {
         if (!messyRes.ok || !cleanRes.ok)
@@ -42,7 +42,7 @@ export default function Home() {
         }
       })
       .catch((err) => {
-        setError(`${err.message}. Is the API running?`);
+        setError(`${err.message}`);
       })
       .finally(() => setLoading(false));
   }, []);
