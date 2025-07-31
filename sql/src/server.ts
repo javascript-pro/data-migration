@@ -2,8 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 import {header, endpoints} from './lib';
-import testRouter from './routes/test/test';
-import dbRouter from './routes/db';
+import applicationsRouter from './routes/applications';
 import logRouter from './routes/log';
 
 const app = express();
@@ -12,8 +11,8 @@ const PORT = 4000;
 app.use(cors());
 app.use(express.json());
 
-app.use('/test', testRouter);
-app.use('/db', dbRouter);
+
+app.use('/applications', applicationsRouter);
 app.use('/log', logRouter);
 
 app.all('/', (req, res) => {

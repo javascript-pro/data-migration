@@ -6,5 +6,6 @@ const {version, description} = pJSON;
 export const header = {
     version, 
     description,
-    baseURL: "http://localhost:4000/",
+    nextURL: "http://localhost:1975/",
+    sqlURL: "http://localhost:4000/",
 };

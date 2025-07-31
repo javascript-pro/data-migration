@@ -1,11 +1,31 @@
 {
-  "version": "1.0.2",
-  "name": "data-migration",
-  "description": "Data Migration with Next, Python & SQL",
-  "packageManager": "yarn@4.3.1",
+  "name": "next",
+  "version": "1.0.1",
+  "private": true,
   "scripts": {
-    "next": "cd next.js && yarn dev",
-    "sql": "cd sql && yarn dev",
-    "python": "cd ./python && clear && poetry run python menu.py"
-  }
+    "dev": "next dev -p 1975",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
+    "@mui/material": "^7.2.0",
+    "@mui/x-data-grid": "^8.9.1",
+    "next": "15.4.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.5",
+    "typescript": "^5"
+  },
+  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
 }
