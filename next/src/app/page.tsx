@@ -4,6 +4,9 @@
 import * as React from 'react';
 import {
   Container,
+  Card,
+  CardHeader,
+  CardContent,
   Typography,
   Box,
   CircularProgress,
@@ -48,10 +51,12 @@ export default function Home() {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Table: Applications
-      </Typography>
+    <Container maxWidth="md" sx={{ py: 4 }}>
+      <Card>
+        <CardHeader 
+          title="Messy Table Example"
+          action={<>API btn</>}
+        />
 
       {loading && (
         <Box display="flex" justifyContent="center" mt={4}>
@@ -66,7 +71,11 @@ export default function Home() {
       )}
 
       {!loading && !error && (
-        <Paper elevation={1} sx={{ height: 600, width: '100%', mt: 2 }}>
+        <Paper elevation={1} sx={{ 
+          height: 500, 
+          width: '100%', 
+          mt: 2 
+        }}>
           <DataGrid
             rows={rows}
             columns={columns}
@@ -76,6 +85,7 @@ export default function Home() {
           />
         </Paper>
       )}
+      </Card>
     </Container>
   );
 }
